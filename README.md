@@ -57,7 +57,7 @@ This project is built using the following tools and technologies:
 
 ## Project Modules
 
-### Part 1 – Getting to know the Teensy 4.0 and Arduino IDE
+### [Part 1 – Getting to know the Teensy 4.0 and Arduino IDE](./Part%201%20-%20Getting%20to%20know%20the%20Teensy%204.0%20and%20Arduino%20IDE)
 
 Summary: Initial setup of the development environment, exploring the Teensy board and uploading basic code. 
 
