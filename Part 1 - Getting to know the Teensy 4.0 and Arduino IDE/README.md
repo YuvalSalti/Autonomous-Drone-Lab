@@ -25,7 +25,8 @@ We will install the necessary development environments, configure them, and run 
 
 ## Installation Guide
 In order to run the project we need to download the following softetware:
-1. [Arduino IDE](https://www.arduino.cc/en/software) 
+1. [Arduino IDE](https://www.arduino.cc/en/software) - Go to the link and download the IDE for your system.
+2. Teensyduino - after downloading the the IDE 
 
 ---
 
