@@ -61,7 +61,8 @@ This project is built using the following tools and technologies:
 
 Summary: Initial setup of the development environment, exploring the Teensy board and uploading basic code. 
 
-[**part1/**](./hardware/README.md) 
+[Part 1 – Getting to know the Teensy 4.0 and Arduino IDE folder](./Part%201%20-%20Getting%20to%20know%20the%20Teensy%204.0%20and%20Arduino%20IDE)
+
 
 In the detailed README:
 -	Installing Teensyduino/PlatformIO
