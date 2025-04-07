@@ -26,40 +26,89 @@ We will install the necessary development environments, configure them, and run 
 ## Installation Guide
 In order to run the project we need to download the following softetware:
 1. [Arduino IDE](https://www.arduino.cc/en/software) - Go to the link and download the IDE for your system.
-2. Teensyduino - after downloading the the IDE 
+2. Teensyduino - after downloading the the IDE press the BOARD MANAGER and search TEENSY and download TEENSY by Paul Stoffregen.<br>
+   <img src="Media/Teensyduino.png" alt="Teensyduino" width="500"/>
+4. [Teensy Loader](https://www.pjrc.com/teensy/loader.html) - by the time you see this Teensy Loader is included in the Teensyduino. Download only if you have an older version of Teensyduino downloaded.
 
 ---
 
-## Circuit Diagram
+## About The Teensy 4.0
 
-If available, include a circuit diagram image here:
+The Teensy 4.0 is the core microcontroller used in this drone project. It’s a compact, high-performance board based on a 600 MHz ARM Cortex-M7 processor, designed for real-time and computation-heavy applications like flight control.
 
-> 📷 *`diagram.png` or paste from another source*
+In this project, the Teensy 4.0 is responsible for:
+-	Reading sensor data (e.g., gyroscope, barometer)
+-	Interpreting RC receiver input using the PulsePosition library
+-	Running PID control loops for flight stabilization (roll, pitch, yaw)
+-	Generating PWM signals to control brushless motors via ESCs
 
-Or describe the pin connections in text:
+Its speed and low latency are essential for stable, responsive drone behavior.
 
-| Teensy Pin | Component Pin | Description       |
-|------------|----------------|-------------------|
-| 3.3V       | VCC            | Power supply      |
-| GND        | GND            | Ground            |
-| SDA        | SDA            | I2C data line     |
-| SCL        | SCL            | I2C clock line    |
+🔧 Key Features:
+	-	600 MHz ARM Cortex-M7 32-bit CPU
+	-	1 MB RAM, 2 MB Flash memory
+	-	Supports PWM, UART, SPI, I2C, USB and more
+	-	40 digital I/O pins
+	-	Fast analog read, high-resolution timers
+	-	Compatible with Arduino IDE (Teensyduino) and PlatformIO
+	-	Compact size: only 1.4” x 0.7” (35.56 x 17.78 mm)
+
+🔗 More Information
+
+For a full technical overview, pinout diagrams, and library support, visit the official Teensy 4.0 page on PJRC’s website.
+
+---
+
+## Code Structure
+
+### 🛠️ `setup()`
+```cpp
+void setup() {
+  // Code here runs once when the board is powered on or reset
+}
+```
+The setup block is called once when the microcontroller is powered on or reset.<br>
+Used to configure the initial state of the system.<br>
+Common tasks in setup():
+-	Setting pin modes (pinMode())
+-	Starting serial communication (Serial.begin())
+-	Initializing sensors or libraries
+
+```cpp
+void loop() {
+  // Code here runs repeatedly in an infinite loop
+}
+```
+Runs in an infinite loop as long as the board is powered.<br>
+Common tasks in loop():
+- Read sensor values
+-	Control outputs (LEDs, motors, etc.)
+-	Respond to user inputs (buttons, receivers)
+-	Perform repeated actions and logic
 
 ---
 
 ## Code Explanation
 
-Summarize what the code does in this part. Optionally include a link to the file:
+```ccp
+void setup() {
+  // put your setup code here, to run once:
+  // Initialize port 13 as output
+  pinMode(13, OUTPUT);
+}
 
-> 📁 See [`main.ino`](./main.ino) for the full code.
-
-Break it down:
-- Libraries used
-- Key functions or logic
-- Setup and loop behavior
-- Serial output or behavior to expect
-
----
+void loop() {
+  // put your main code here, to run repeatedly:
+  // Write pin 13 as high (on) and wait 500 ms.
+  digitalWrite(13,HIGH);
+  delay(500);
+  
+  // Write pin 13 as low (off) and wait 500 ms.
+  digitalWrite(13,LOW);
+  delay(500);
+}
+```
+look for function explenation file to see the function used in the project and what is there purpose.
 
 ## Testing & Results
 
